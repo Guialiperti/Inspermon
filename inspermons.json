@@ -1,20 +1,20 @@
 [
 	{
-		"nome" : "picaxu",
-		"poder" : 20,
+		"nome" : "Zapixu",
+		"poder" : 30,
 		"vida" : 200,
 		"defesa" : 5
 	},
 	{
-		"nome" : "xamando",
+		"nome" : "Xamante",
 		"poder" : 25,
 		"vida" : 100,
 		"defesa" : 5
 	},
 	{
-		"nome" : "pidijet",
+		"nome" : "PidiJet",
 		"poder" : 15,
-		"vida" : 300,
+		"vida" : 250,
 		"defesa" : 8
 	},
 	{
@@ -28,5 +28,17 @@
 		"poder" : 10,
 		"vida" : 250,
 		"defesa" : 4
+	},
+	{
+		"nome" : "Cretinat",
+		"poder" : 15,
+		"vida" : 150,
+		"defesa" : 7
+	},
+	{
+		"nome" : "Bunisauro",
+		"poder" : 35,
+		"vida" : 120,
+		"defesa" : 5
 	}
 ]

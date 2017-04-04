@@ -26,23 +26,27 @@ def batalha(jogador,adversario):
         vida_adversario = vida_adversario - dano_jogador
         if vida_adversario < 0:
         	vida_adversario = 0
-        print("{0}: Ataca! {1} de dano".format(jogador["nome"], dano_jogador))
-        print("{0}: {1} restante de vida".format(adversario["nome"], vida_adversario))
+        print("{0}: Ataca! {1} de dano".format(jogador["nome"],
+        									   dano_jogador))
+        print("{0}: {1} restante de vida".format(adversario["nome"],
+        										 vida_adversario))
         time.sleep(2)
         if vida_adversario < 1:
             return "VITÓRIA!"                               
         vida_jogador = vida_jogador - dano_adversario
         if vida_jogador < 0:
         	vida_jogador = 0
-        print("{0}: Ataca! {1} de dano".format(adversario["nome"], dano_adversario))
-        print("{0}: {1} restante de vida".format(jogador["nome"], vida_jogador))
+        print("{0}: Ataca! {1} de dano".format(adversario["nome"],
+        									   dano_adversario))
+        print("{0}: {1} restante de vida".format(jogador["nome"],
+        										 vida_jogador))
         time.sleep(2)
         if vida_jogador < 1:
             return "DERROTA!"
 
 
-data = open("inspermons.json").read()
-inspermons = json.loads(data)
+with open("inspermons.json") as arquivo:
+	inspermons = json.load(arquivo)
 
 
 z = 0
@@ -55,7 +59,10 @@ inspermon_jogador = inspermons[x_do_jogador]
 print('''Seu inspermon escolhido foi: {0}
 vida: {1}
 poder: {2}
-defesa: {3}'''.format(inspermon_jogador["nome"],inspermon_jogador["vida"],inspermon_jogador["poder"],inspermon_jogador["defesa"]))   
+defesa: {3}'''.format(inspermon_jogador["nome"],
+				      inspermon_jogador["vida"],
+					  inspermon_jogador["poder"],
+					  inspermon_jogador["defesa"]))   
 while True:
     acao = input("Digite lutar ou dormir: ")
     if acao == "dormir":
@@ -65,5 +72,8 @@ while True:
 	    print('''O inspermon adversário é: {0}
 	vida: {1}
 	poder: {2}
-	defesa: {3}'''.format(inspermon_adversario["nome"],inspermon_adversario["vida"],inspermon_adversario["poder"],inspermon_adversario["defesa"])) 
+	defesa: {3}'''.format(inspermon_adversario["nome"],
+		                  inspermon_adversario["vida"],
+		                  inspermon_adversario["poder"],
+		                  inspermon_adversario["defesa"])) 
 	    print(batalha(inspermon_jogador,inspermon_adversario))

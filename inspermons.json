@@ -3,42 +3,49 @@
 		"nome" : "Zapixu",
 		"poder" : 30,
 		"vida" : 200,
-		"defesa" : 5
+		"defesa" : 5,
+		"sorte" : 25
 	},
 	{
 		"nome" : "Xamante",
-		"poder" : 25,
+		"poder" : 40,
 		"vida" : 100,
-		"defesa" : 5
+		"defesa" : 5,
+		"sorte" : 35
 	},
 	{
 		"nome" : "PidiJet",
-		"poder" : 15,
+		"poder" : 20,
 		"vida" : 250,
-		"defesa" : 8
+		"defesa" : 8,
+		"sorte" : 15
 	},
 	{
 		"nome" : "Malandrino",
 		"poder" : 30,
 		"vida" : 130,
-		"defesa" : 6 
+		"defesa" : 6,
+		"sorte" : 50
 	},
 	{
 		"nome" : "Samolao",
 		"poder" : 10,
 		"vida" : 250,
-		"defesa" : 4
+		"defesa" : 4,
+		"sorte" : 10
 	},
 	{
 		"nome" : "Cretinat",
-		"poder" : 15,
-		"vida" : 150,
-		"defesa" : 7
+		"poder" : 22,
+		"vida" : 175,
+		"defesa" : 7,
+		"sorte" : 30
 	},
 	{
 		"nome" : "Bunisauro",
 		"poder" : 35,
 		"vida" : 120,
-		"defesa" : 5
+		"defesa" : 5,
+		"sorte" : 25
 	}
 ]

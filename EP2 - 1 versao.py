@@ -33,7 +33,8 @@ def batalha(jogador,adversario):
         time.sleep(2)
         if vida_adversario < 1:
             return "VITÓRIA!"                               
-        vida_jogador = vida_jogador - dano_adversario
+        vida_jogador = vida_jogador - acerto_critico(adversario["sorte"],
+                                                     dano_adversario)
         if vida_jogador < 0:
         	vida_jogador = 0
         print("{0}: Ataca! {1} de dano".format(adversario["nome"],
@@ -60,8 +61,8 @@ print('''Seu inspermon escolhido foi: {0}
 vida: {1}
 poder: {2}
 defesa: {3}'''.format(inspermon_jogador["nome"],
-		      inspermon_jogador["vida"],
-		      inspermon_jogador["poder"],
+		              inspermon_jogador["vida"],
+		              inspermon_jogador["poder"],
                       inspermon_jogador["defesa"]))   
 while True:
     acao = input("Digite lutar ou dormir: ")

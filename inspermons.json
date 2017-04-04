@@ -3,18 +3,30 @@
 		"nome" : "picaxu",
 		"poder" : 20,
 		"vida" : 200,
-		"defesa" : 12
+		"defesa" : 5
 	},
 	{
 		"nome" : "xamando",
 		"poder" : 25,
 		"vida" : 100,
-		"defesa" : 10
+		"defesa" : 5
 	},
 	{
 		"nome" : "pidijet",
 		"poder" : 15,
 		"vida" : 300,
-		"defesa" : 10
+		"defesa" : 8
+	},
+	{
+		"nome" : "Malandrino",
+		"poder" : 30,
+		"vida" : 130,
+		"defesa" : 6 
+	},
+	{
+		"nome" : "Samolao",
+		"poder" : 10,
+		"vida" : 250,
+		"defesa" : 4
 	}
 ]

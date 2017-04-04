@@ -60,9 +60,9 @@ print('''Seu inspermon escolhido foi: {0}
 vida: {1}
 poder: {2}
 defesa: {3}'''.format(inspermon_jogador["nome"],
-				      inspermon_jogador["vida"],
-					  inspermon_jogador["poder"],
-					  inspermon_jogador["defesa"]))   
+		      inspermon_jogador["vida"],
+		      inspermon_jogador["poder"],
+                      inspermon_jogador["defesa"]))   
 while True:
     acao = input("Digite lutar ou dormir: ")
     if acao == "dormir":

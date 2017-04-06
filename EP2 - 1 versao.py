@@ -1,6 +1,8 @@
 import random
 import json
 import time
+
+
 def acerto_critico(sorte):
 	sorteado = random.randint(0,100)
 	if sorteado in range(0, sorte):
@@ -9,6 +11,15 @@ def acerto_critico(sorte):
 		return False
 
 
+def fuga(sorte, n_tentativas):
+    chance = sorte * n_tentativas
+    if chance > 100:
+        chance = 100
+    sorteado = random.randint(0, 100)
+    if sorteado in range(0, chance):
+        return True
+    else:
+        return False
 
 
 def batalha(jogador, adversario):
@@ -22,7 +33,7 @@ def batalha(jogador, adversario):
         dano_adversario = 0
     print("""Combate inicia!
         {0} vs {1}""".format(jogador["nome"], adversario["nome"]))
-    time.sleep(4)
+    time.sleep(3)
     while vida_jogador > 0 and vida_adversario > 0:
         time.sleep(2)
         if acerto_critico(jogador["sorte"]) == True:
@@ -38,12 +49,12 @@ def batalha(jogador, adversario):
         print("{0}: {1} restante de vida".format(adversario["nome"],
                                                  vida_adversario))
         if vida_adversario < 1:
-            return "VITÓRIA!"
+            return "VITORIA"
         time.sleep(2)
         if acerto_critico(adversario["sorte"]) == True:
             vida_jogador = vida_jogador - (dano_adversario * 2)
             print("{0}: ATAQUE CRÍTICO! {1} de dano".format(adversario["nome"],
-                                                            vida_jogador))
+                                                            2 * dano_jogador))
         else:
             vida_jogador = vida_jogador - dano_adversario
             print("{0}: Ataca! {1} de dano".format(adversario["nome"],
@@ -53,17 +64,13 @@ def batalha(jogador, adversario):
         print("{0}: {1} restante de vida".format(jogador["nome"],
                                                  vida_jogador))
         if vida_jogador < 1:
-            return "DERROTA!"
-
-
+            return "DERROTA"
 
 
 with open("inspermons.json") as arquivo:
     inspermons = json.load(arquivo)
 
     
-
-
 z = 0
 for ipmon in inspermons:
     print(ipmon)
@@ -98,3 +105,9 @@ while True:
                                     inspermon_adversario["defesa"],
                                     inspermon_adversario["sorte"]))
         resultado = batalha(inspermon_jogador,inspermon_adversario)
+        if resultado == "DERROTA":
+            print("""Seu inspermon foi derrotado,
+                            Fim de Jogo""")
+            break
+        else:
+            print("Seu inspermon venceu")

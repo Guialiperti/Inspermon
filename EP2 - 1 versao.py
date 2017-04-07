@@ -105,6 +105,8 @@ while True:
     acao = input("Digite lutar, dormir ou insperdex: ")
     if acao == "dormir":
         break
+
+        
     elif acao == "lutar":
         inspermon_adversario = random.choice(inspermons)
         if inspermon_adversario not in insperdex:
@@ -124,8 +126,10 @@ while True:
             print("""Seu inspermon foi derrotado,
                             Fim de Jogo""")
             break
-        else:
+        elif resultado == "VITORIA":
             print("Seu inspermon venceu")
+
+
     elif acao == "insperdex":
         print("INSPERDÉX")
         for ipmon in insperdex:

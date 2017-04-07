@@ -4,7 +4,7 @@ import time
 
 
 def acerto_critico(sorte):
-	sorteado = random.randint(0,100)
+	sorteado = random.randint(0, 99)
 	if sorteado in range(0, sorte):
 		return True
 	else:
@@ -106,7 +106,7 @@ while True:
     if acao == "dormir":
         break
 
-        
+
     elif acao == "lutar":
         inspermon_adversario = random.choice(inspermons)
         if inspermon_adversario not in insperdex:

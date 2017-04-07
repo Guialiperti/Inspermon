@@ -33,7 +33,7 @@ def batalha(jogador, adversario):
         dano_adversario = 0
     print("""Combate inicia!
         {0} vs {1}""".format(jogador["nome"], adversario["nome"]))
-    time.sleep(3)
+    time.sleep(2)
     while vida_jogador > 0 and vida_adversario > 0:
         escolha = input("Digite fugir ou a tecla enter para atacar:")
         n_de_fugas = 0
@@ -111,6 +111,7 @@ while True:
         inspermon_adversario = random.choice(inspermons)
         if inspermon_adversario not in insperdex:
             insperdex.append(inspermon_adversario)
+        time.sleep(2)
         print("""O inspermon adversário é: {0}
                                      Vida: {1}      
                                     Poder: {2}
@@ -121,6 +122,7 @@ while True:
                                     inspermon_adversario["poder"],
                                     inspermon_adversario["defesa"],
                                     inspermon_adversario["sorte"]))
+        time.sleep(1)
         resultado = batalha(inspermon_jogador,inspermon_adversario)
         if resultado == "DERROTA":
             print("""Seu inspermon foi derrotado,

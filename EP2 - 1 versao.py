@@ -35,26 +35,36 @@ def batalha(jogador, adversario):
         {0} vs {1}""".format(jogador["nome"], adversario["nome"]))
     time.sleep(3)
     while vida_jogador > 0 and vida_adversario > 0:
-        time.sleep(2)
-        if acerto_critico(jogador["sorte"]) == True:
-            vida_adversario = vida_adversario - (2 * dano_jogador)
-            print("{0}: ATAQUE CRÍTICO! {1} de dano".format(jogador["nome"],
-                                                            2 * dano_jogador)) 
-        else:    
-            vida_adversario = vida_adversario - dano_jogador
-            print("{0}: Ataca! {1} de dano".format(jogador["nome"],
-                                                   dano_jogador))
-        if vida_adversario < 0:
-            vida_adversario = 0
-        print("{0}: {1} restante de vida".format(adversario["nome"],
-                                                 vida_adversario))
-        if vida_adversario < 1:
-            return "VITORIA"
+        escolha = input("Digite fugir ou a tecla enter para atacar:")
+        n_de_fugas = 0
+        if escolha == "fugir":
+            n_de_fugas = n_de_fugas + 1
+            resultado_fuga = fuga(jogador["sorte"], n_de_fugas)
+            if resultado_fuga == True:
+                print("Fuga executada com sucesso")
+                break
+            else:
+                print("Seu inspermon nao conseguiu fugir")
+        else:
+            if acerto_critico(jogador["sorte"]) == True:
+                vida_adversario = vida_adversario - (2 * dano_jogador)
+                print("{0}: ATAQUE CRÍTICO! {1} de dano".format(jogador["nome"],
+                                                                2 * dano_jogador)) 
+            else:    
+                vida_adversario = vida_adversario - dano_jogador
+                print("{0}: Ataca! {1} de dano".format(jogador["nome"],
+                                                       dano_jogador))
+            if vida_adversario < 0:
+                vida_adversario = 0
+            print("{0}: {1} restante de vida".format(adversario["nome"],
+                                                     vida_adversario))
+            if vida_adversario < 1:
+                return "VITORIA"
         time.sleep(2)
         if acerto_critico(adversario["sorte"]) == True:
             vida_jogador = vida_jogador - (dano_adversario * 2)
             print("{0}: ATAQUE CRÍTICO! {1} de dano".format(adversario["nome"],
-                                                            2 * dano_jogador))
+                                                            2 * dano_adversario))
         else:
             vida_jogador = vida_jogador - dano_adversario
             print("{0}: Ataca! {1} de dano".format(adversario["nome"],
@@ -70,6 +80,8 @@ def batalha(jogador, adversario):
 with open("inspermons.json") as arquivo:
     inspermons = json.load(arquivo)
 
+insperdex = []
+
     
 z = 0
 for ipmon in inspermons:
@@ -78,27 +90,30 @@ for ipmon in inspermons:
     z = z+1
 x_do_jogador = int(input("Digite o número do inspermon escolhido: ")) - 1
 inspermon_jogador = inspermons[x_do_jogador]
+insperdex.append(inspermon_jogador)
 print('''Seu inspermon escolhido foi: {0}
-                                vida: {1}
-                               poder: {2}
-                              defesa: {3}
-                               sorte: {4}'''.format(
+                                Vida: {1}
+                               Poder: {2}
+                              Defesa: {3}
+                               Sorte: {4}'''.format(
                       inspermon_jogador["nome"],
                       inspermon_jogador["vida"],
                       inspermon_jogador["poder"],
                       inspermon_jogador["defesa"],
                       inspermon_jogador["sorte"])) 
 while True:
-    acao = input("Digite lutar ou dormir: ")
+    acao = input("Digite lutar, dormir ou insperdex: ")
     if acao == "dormir":
         break
     elif acao == "lutar":
         inspermon_adversario = random.choice(inspermons)
-        print('''O inspermon adversário é: {0}
-                                     vida: {1}      
-                                    poder: {2}
-                                   defesa: {3}
-                                    sorte: {4}'''.format(
+        if inspermon_adversario not in insperdex:
+            insperdex.append(inspermon_adversario)
+        print("""O inspermon adversário é: {0}
+                                     Vida: {1}      
+                                    Poder: {2}
+                                   Defesa: {3}
+                                    Sorte: {4}""".format(
                                     inspermon_adversario["nome"],
                                     inspermon_adversario["vida"],
                                     inspermon_adversario["poder"],
@@ -111,3 +126,16 @@ while True:
             break
         else:
             print("Seu inspermon venceu")
+    elif acao == "insperdex":
+        print("INSPERDÉX")
+        for ipmon in insperdex:
+            print("-------------------------------------")
+            print("""Nome: {0}
+                     Vida: {1}
+                    Poder: {2}
+                   Defesa: {3}
+                    Sorte: {4}""".format(ipmon["nome"],
+                                         ipmon["vida"],
+                                         ipmon["poder"],
+                                         ipmon["defesa"],
+                                         ipmon["sorte"]))

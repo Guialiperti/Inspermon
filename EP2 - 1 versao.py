@@ -121,9 +121,7 @@ elif menu_inicial == "new":
                           inspermon_jogador["defesa"],
                           inspermon_jogador["sorte"])) 
 while True:
-
-
-    acao = input("Digite lutar, dormir ou insperdex:")
+    acao = input("Digite lutar, dormir, insperdex ou salvar:")
 
 
     if acao == "dormir":
@@ -176,6 +174,6 @@ while True:
             json.dump(save_game, fp, indent = 1)
         print("JOGO SALVO!")
     else:
-        print("Comando inválido!")
+        print("Comando inválido")
 
 

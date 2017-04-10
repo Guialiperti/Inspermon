@@ -80,29 +80,52 @@ def batalha(jogador, adversario):
 with open("inspermons.json") as arquivo:
     inspermons = json.load(arquivo)
 
-insperdex = []
+menu_inicial = input("""Digite 'load' para continuar de onde parou ou
+                       'new' para comecar outra vez: """)
 
-    
-z = 0
-for ipmon in inspermons:
-    print(ipmon)
-    print("Número do inspermon: {0}".format(z + 1)) 
-    z = z+1
-x_do_jogador = int(input("Digite o número do inspermon escolhido: ")) - 1
-inspermon_jogador = inspermons[x_do_jogador]
-insperdex.append(inspermon_jogador)
-print('''Seu inspermon escolhido foi: {0}
-                                Vida: {1}
-                               Poder: {2}
-                              Defesa: {3}
-                               Sorte: {4}'''.format(
-                      inspermon_jogador["nome"],
-                      inspermon_jogador["vida"],
-                      inspermon_jogador["poder"],
-                      inspermon_jogador["defesa"],
-                      inspermon_jogador["sorte"])) 
+
+if menu_inicial == "load":
+    with open("save_game.json") as arquivo:
+        data_master = json.load(arquivo)
+    insperdex = data_master["insperdex"]
+    inspermon_jogador = data_master["jogador"]
+
+
+elif menu_inicial == "new":
+    insperdex = []
+    z = 1
+    for ipmon in inspermons:
+        print("---- {0} ----".format(z))
+        print("""Nome: {0}
+                 Vida: {1}
+                Poder: {2}
+               Defesa: {3}
+                Sorte: {4}""".format(ipmon["nome"],
+                                     ipmon["vida"],
+                                     ipmon["poder"],
+                                     ipmon["defesa"],
+                                     ipmon["sorte"]))
+         
+        z = z+1
+    x_do_jogador = int(input("Digite o número do inspermon escolhido: ")) - 1
+    inspermon_jogador = inspermons[x_do_jogador]
+    insperdex.append(inspermon_jogador)
+    print('''Seu inspermon escolhido foi: {0}
+                                    Vida: {1}
+                                   Poder: {2}
+                                  Defesa: {3}
+                                   Sorte: {4}'''.format(
+                          inspermon_jogador["nome"],
+                          inspermon_jogador["vida"],
+                          inspermon_jogador["poder"],
+                          inspermon_jogador["defesa"],
+                          inspermon_jogador["sorte"])) 
 while True:
+
+
     acao = input("Digite lutar, dormir ou insperdex: ")
+
+
     if acao == "dormir":
         break
 
@@ -145,3 +168,15 @@ while True:
                                          ipmon["poder"],
                                          ipmon["defesa"],
                                          ipmon["sorte"]))
+    elif acao == "salvar":
+        save_game = {}
+        save_game["jogador"] = inspermon_jogador
+        save_game["insperdex"] = insperdex
+        with open("save_game.json", "w") as fp:
+            json.dump(save_game, fp, indent = 1)
+    
+
+    else:
+        print("Comando inválido!")
+
+

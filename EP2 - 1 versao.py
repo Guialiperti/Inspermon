@@ -123,7 +123,7 @@ elif menu_inicial == "new":
 while True:
 
 
-    acao = input("Digite lutar, dormir ou insperdex: ")
+    acao = input("Digite lutar, dormir, insperdex ou salvar")
 
 
     if acao == "dormir":

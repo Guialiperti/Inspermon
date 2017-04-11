@@ -81,7 +81,7 @@ with open("inspermons.json") as arquivo:
     inspermons = json.load(arquivo)
 
 menu_inicial = input("""Digite 'load' para continuar de onde parou ou
-                       'new' para comecar outra vez: """)
+                    'new' para comecar outra vez: """)
 
 
 if menu_inicial == "load":
@@ -125,7 +125,8 @@ elif menu_inicial == "new":
 while True:
 
 
-    acao = input("Digite lutar, dormir, insperdex ou salvar").lower()
+    acao = input("Digite lutar, dormir, insperdex ou salvar:").lower()
+
 
 
     if acao == "dormir":
@@ -176,9 +177,8 @@ while True:
         save_game["insperdex"] = insperdex
         with open("save_game.json", "w") as fp:
             json.dump(save_game, fp, indent = 1)
-    
-
+        print("JOGO SALVO!")
     else:
-        print("Comando inválido!")
+        print("Comando inválido")
 
 

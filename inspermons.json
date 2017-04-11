@@ -4,48 +4,71 @@
 		"poder" : 30,
 		"vida" : 200,
 		"defesa" : 5,
-		"sorte" : 25
+		"sorte" : 25,
+		"xp" : 0
 	},
 	{
 		"nome" : "Xamante",
 		"poder" : 40,
 		"vida" : 100,
 		"defesa" : 5,
-		"sorte" : 35
+		"sorte" : 35,
+		"xp" : 0
 	},
 	{
 		"nome" : "PidiJet",
 		"poder" : 20,
 		"vida" : 250,
 		"defesa" : 8,
-		"sorte" : 15
+		"sorte" : 15,
+		"xp" : 0
 	},
 	{
 		"nome" : "Malandrino",
 		"poder" : 30,
 		"vida" : 130,
 		"defesa" : 6,
-		"sorte" : 50
+		"sorte" : 50,
+		"xp" : 0
 	},
 	{
 		"nome" : "Samolao",
 		"poder" : 10,
-		"vida" : 250,
+		"vida" : 200,
 		"defesa" : 4,
-		"sorte" : 10
+		"sorte" : 10,
+		"xp" : 0
 	},
 	{
 		"nome" : "Cretinat",
 		"poder" : 22,
 		"vida" : 175,
 		"defesa" : 7,
-		"sorte" : 30
+		"sorte" : 30,
+		"xp" : 0
 	},
 	{
-		"nome" : "Bunisauro",
+		"nome" : "Gordinez",
 		"poder" : 35,
 		"vida" : 120,
 		"defesa" : 5,
-		"sorte" : 25
+		"sorte" : 25,
+		"xp" : 0
+	},
+	{
+		"nome" : "Curlyng",
+		"poder" : 24,
+		"vida" : 160,
+		"defesa" : 5,
+		"sorte" : 35,
+		"xp" : 0
+	},
+	{
+		"nome" : "RuhMan",
+		"poder" : 32,
+		"vida" : 180,
+		"defesa" : 4,
+		"sorte" : 30,
+		"xp" : 0
 	}
 ]

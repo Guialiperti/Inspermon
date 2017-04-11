@@ -159,6 +159,16 @@ while True:
 
 
     elif acao == "insperdex":
+        print("               ")
+        print("""Seu inspermon: {0}
+                          Vida: {1}
+                         Poder: {2}
+                        Defesa: {3}
+                         Sorte: {4}""".format(inspermon_jogador["nome"],
+                                              inspermon_jogador["vida"],
+                                              inspermon_jogador["poder"],
+                                              inspermon_jogador["defesa"],
+                                              inspermon_jogador["sorte"]))
         print("INSPERDÉX")
         for ipmon in insperdex:
             print("-------------------------------------")
@@ -171,6 +181,8 @@ while True:
                                          ipmon["poder"],
                                          ipmon["defesa"],
                                          ipmon["sorte"]))
+
+
     elif acao == "salvar":
         save_game = {}
         save_game["jogador"] = inspermon_jogador
@@ -178,6 +190,8 @@ while True:
         with open("save_game.json", "w") as fp:
             json.dump(save_game, fp, indent = 1)
         print("JOGO SALVO!")
+
+
     else:
         print("Comando inválido")
 

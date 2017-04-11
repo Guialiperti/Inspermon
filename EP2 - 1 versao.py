@@ -120,10 +120,12 @@ elif menu_inicial == "new":
                           inspermon_jogador["poder"],
                           inspermon_jogador["defesa"],
                           inspermon_jogador["sorte"])) 
+
+
 while True:
 
 
-    acao = input("Digite lutar, dormir, insperdex ou salvar")
+    acao = input("Digite lutar, dormir, insperdex ou salvar").lower()
 
 
     if acao == "dormir":

@@ -48,11 +48,27 @@
 		"xp_m" : 5
 	},
 	{
-		"nome" : "Bunisauro",
+		"nome" : "Gordinez",
 		"poder" : 35,
 		"vida" : 120,
 		"defesa" : 5,
 		"sorte" : 25,
+		"xp_m" : 5
+	},
+	{
+		"nome" : "Curlyng",
+		"poder" : 24,
+		"vida" : 160,
+		"defesa" : 5,
+		"sorte" : 35,
+		"xp_m" : 5 
+	},
+	{
+		"nome" : "RuhMan",
+		"poder" : 32,
+		"vida" : 180,
+		"defesa" : 4,
+		"sorte" : 30,
 		"xp_m" : 5
 	}
 ]

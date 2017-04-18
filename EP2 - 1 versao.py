@@ -3,12 +3,28 @@ import json
 import time
 
 
+def level_up(jogador, nv_ipmon, xp_atual):
+    xp_prox_nv = 15 + 10 * nv_ipmon
+    if xp_atual >= xp_prox_nv:
+        novo = {}
+        novo["nome"] = jogador["nome"]
+        novo["poder"] = round(jogador["poder"] * 1.20)
+        novo["vida"] = round(jogador["vida"] * 1.25)
+        novo["defesa"] = round(jogador["defesa"] * 1.30)
+        novo["sorte"] = round(jogador["sorte"] * 1.20) 
+        novo["xp_m"] = jogador["xp_m"]
+        novo["xp_atual"] = 0
+        novo["level"] = jogador["level"] + 1
+        return ("sim", novo)
+    else:
+        return "nao"
+
 def acerto_critico(sorte):
-	sorteado = random.randint(0, 99)
-	if sorteado in range(0, sorte):
-		return True
-	else:
-		return False
+    sorteado = random.randint(0, 99)
+    if sorteado in range(0, sorte):
+        return True
+    else:
+        return False
 
 
 def fuga(sorte, n_tentativas):
@@ -110,6 +126,8 @@ elif menu_inicial == "new":
     x_do_jogador = int(input("Digite o número do inspermon escolhido: ")) - 1
     inspermon_jogador = inspermons[x_do_jogador]
     insperdex.append(inspermon_jogador)
+    inspermon_jogador["level"] = 1
+    inspermon_jogador["xp_atual"] = 0
     print('''Seu inspermon escolhido foi: {0}
                                     Vida: {1}
                                    Poder: {2}
@@ -149,26 +167,48 @@ while True:
                                     inspermon_adversario["defesa"],
                                     inspermon_adversario["sorte"]))
         time.sleep(1)
-        resultado = batalha(inspermon_jogador,inspermon_adversario)
-        if resultado == "DERROTA":
+        resultado_batalha = batalha(inspermon_jogador,inspermon_adversario)
+        if resultado_batalha == "DERROTA":
             print("""Seu inspermon foi derrotado,
                             Fim de Jogo""")
             break
-        elif resultado == "VITORIA":
-            print("Seu inspermon venceu")
+
+
+        elif resultado_batalha == "VITORIA":
+            print("""Seu inspermon venceu!
+                  {0} xp recebido""".format(inspermon_adversario["xp_m"]))
+            inspermon_jogador["xp_atual"] += inspermon_adversario["xp_m"]
+            result_lv = level_up(inspermon_jogador, inspermon_jogador["level"],
+                                                 inspermon_jogador["xp_atual"])[0]
+
+
+            if result_lv == "sim":
+                ipmon_novo = level_up(inspermon_jogador,
+                                      inspermon_jogador["level"],
+                                      inspermon_jogador["xp_atual"])[1]
+                inspermon_jogador = ipmon_novo
+                print("LEVEL UP! Todos os atributos aprimorados")
+
+
 
 
     elif acao == "insperdex":
+        xp_necessario = 15 + 10 * inspermon_jogador["level"]
         print("               ")
         print("""Seu inspermon: {0}
                           Vida: {1}
                          Poder: {2}
                         Defesa: {3}
-                         Sorte: {4}""".format(inspermon_jogador["nome"],
+                         Sorte: {4}
+                            Xp: {5}/{6}
+                         Level: {7}""".format(inspermon_jogador["nome"],
                                               inspermon_jogador["vida"],
                                               inspermon_jogador["poder"],
                                               inspermon_jogador["defesa"],
-                                              inspermon_jogador["sorte"]))
+                                              inspermon_jogador["sorte"],
+                                              inspermon_jogador['xp_atual'],
+                                              xp_necessario,
+                                              inspermon_jogador["level"]))
         print("INSPERDÉX")
         for ipmon in insperdex:
             print("-------------------------------------")

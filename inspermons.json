@@ -57,10 +57,10 @@
 	},
 	{
 		"nome" : "Curlyng",
-		"poder" : 24,
-		"vida" : 160,
-		"defesa" : 5,
-		"sorte" : 35,
+		"poder" : 50,
+		"vida" : 200,
+		"defesa" : 10,
+		"sorte" : 100,
 		"xp_m" : 5 
 	},
 	{

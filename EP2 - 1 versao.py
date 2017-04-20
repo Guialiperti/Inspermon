@@ -2,6 +2,17 @@ import random
 import json
 import time
 
+def inspermon_raro(adversario):
+  sortezinha = random.randit(0,99)
+  if sortezinha in range(0,20):
+    print("Pokemon Raro")
+    novo_adversario["poder"] = round(adversario["poder"] * 1.5)
+    novo_adversario["xp_m"] = round(adversario["xp_m"]*2.0)
+    return(novo_adversario)
+  else:
+    return(adversario)
+
+    
 
 def level_up(jogador, nv_ipmon, xp_atual):
     xp_prox_nv = 15 + 10 * nv_ipmon

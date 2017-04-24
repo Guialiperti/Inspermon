@@ -21,7 +21,7 @@
 		"vida" : 250,
 		"defesa" : 8,
 		"sorte" : 15,
-		"xp_m" : 5
+		"xp_m" : 6
 	},
 	{
 		"nome" : "Malandrino",
@@ -45,7 +45,7 @@
 		"vida" : 175,
 		"defesa" : 7,
 		"sorte" : 30,
-		"xp_m" : 5
+		"xp_m" : 7
 	},
 	{
 		"nome" : "Gordinez",
@@ -69,30 +69,30 @@
 		"vida" : 180,
 		"defesa" : 4,
 		"sorte" : 30,
-		"xp_m" : 5
+		"xp_m" : 10
 	},
 	{
 		"nome" : "Mourellis",
 		"poder" : 60,
-		"vida" : 300,
+		"vida" : 250,
 		"defesa" : 5,
 		"sorte" : 45,
-		"xp_m" : 10
+		"xp_m" : 20
 	},
 	{
 		"nome" : "Guirin",
 		"poder" : 50,
-		"vida" : 200,
-		"defesa" : 6,
-		"sorte" : 20,
-		"xp_m" : 7
+		"vida" : 250,
+		"defesa" : 10,
+		"sorte" : 50,
+		"xp_m" : 20
 	},
 	{
 		"nome" : "Ayresok",
-		"poder" : 40,
+		"poder" : 90,
 		"vida" : 150,
 		"defesa" : 4,
-		"sorte" : 30,
+		"sorte" : 15,
 		"xp_m" : 7
-	},
+	}
 ]

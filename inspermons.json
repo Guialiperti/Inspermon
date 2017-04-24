@@ -57,10 +57,10 @@
 	},
 	{
 		"nome" : "Curlyng",
-		"poder" : 50,
+		"poder" : 30,
 		"vida" : 200,
-		"defesa" : 10,
-		"sorte" : 100,
+		"defesa" : 6,
+		"sorte" : 25,
 		"xp_m" : 5 
 	},
 	{
@@ -70,5 +70,29 @@
 		"defesa" : 4,
 		"sorte" : 30,
 		"xp_m" : 5
-	}
+	},
+	{
+		"nome" : "Mourellis",
+		"poder" : 60,
+		"vida" : 300,
+		"defesa" : 5,
+		"sorte" : 45,
+		"xp_m" : 10
+	},
+	{
+		"nome" : "Guirin",
+		"poder" : 50,
+		"vida" : 200,
+		"defesa" : 6,
+		"sorte" : 20,
+		"xp_m" : 7
+	},
+	{
+		"nome" : "Ayresok",
+		"poder" : 40,
+		"vida" : 150,
+		"defesa" : 4,
+		"sorte" : 30,
+		"xp_m" : 7
+	},
 ]

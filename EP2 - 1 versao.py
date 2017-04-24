@@ -4,7 +4,7 @@ import time
 
 def poçao(): #função que determina se o jogador recebe poção apos uma batalha
     sorteado = random.randint(0,99)
-    if sorteado in range(0, 100):
+    if sorteado in range(0, 50):
         return "y"
 
 def inspermon_raro(adversario):# Determina se o inspermon encontrado é raro ou nao
@@ -208,7 +208,6 @@ while True:#mainloop
                                     inspermon_adversario["sorte"]))
         time.sleep(1)
         resultado_batalha = batalha(inspermon_jogador,inspermon_adversario)
-        print(resultado_batalha)
         if resultado_batalha[0] == "DERROTA":
             print("""Seu inspermon foi derrotado,
                             Fim de Jogo""")
